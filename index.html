@@ -1,0 +1,518 @@
+<title>QM im E-Learning</title>
+<meta name="description" content="Webinar-Landingpage: die 38 Leitfragen des eLearning AWARD als Reflexionswerkzeug für Qualitätsmanagement im E-Learning-Einsatz.">
+<style>
+  :root{
+    --bg:#fbfaf7;
+    --surface:#ffffff;
+    --surface-2:#f1f4f7;
+    --ink:#1a171b;
+    --ink-muted:#4c5964;
+    --ink-faint:#7c8792;
+    --logo-blue:#148eca;
+    --primary:#0e5a7d;
+    --primary-ink:#0a4a66;
+    --primary-tint:#e7f4fb;
+    --accent:#c8842a;
+    --accent-ink:#8f5c15;
+    --accent-tint:#fbf0de;
+    --border:#dde4ea;
+    --border-strong:#c3ccd6;
+    --field-fill:#eaf3fb;
+    --field-border:#a9d8ef;
+    --shadow: 0 1px 2px rgba(20,35,55,.06), 0 12px 28px -16px rgba(20,35,55,.22);
+    --radius-s:6px;
+    --radius-m:12px;
+    --radius-l:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#10171c;
+      --surface:#161f27;
+      --surface-2:#1a2530;
+      --ink:#eef2f6;
+      --ink-muted:#a4b3bd;
+      --ink-faint:#7c8b96;
+      --logo-blue:#4db2ec;
+      --primary:#3faddd;
+      --primary-ink:#cde9f7;
+      --primary-tint:#153148;
+      --accent:#e3a256;
+      --accent-ink:#f6d9ab;
+      --accent-tint:#2a2113;
+      --border:#233039;
+      --border-strong:#354652;
+      --field-fill:#132738;
+      --field-border:#2a4c62;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 32px -18px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#10171c;
+    --surface:#161f27;
+    --surface-2:#1a2530;
+    --ink:#eef2f6;
+    --ink-muted:#a4b3bd;
+    --ink-faint:#7c8b96;
+    --logo-blue:#4db2ec;
+    --primary:#3faddd;
+    --primary-ink:#cde9f7;
+    --primary-tint:#153148;
+    --accent:#e3a256;
+    --accent-ink:#f6d9ab;
+    --accent-tint:#2a2113;
+    --border:#233039;
+    --border-strong:#354652;
+    --field-fill:#132738;
+    --field-border:#2a4c62;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 32px -18px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:20px;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces","Iowan Old Style",serif;
+    font-weight:600;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  .num{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-variant-numeric:tabular-nums;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin-inline:auto;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--accent-ink);
+    display:flex;align-items:center;gap:.5em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    flex:none;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:inherit;font-weight:600;font-size:.95rem;
+    padding:.85em 1.5em;border-radius:999px;
+    border:1px solid transparent;
+    text-decoration:none;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#241505;box-shadow:var(--shadow);}
+  .btn-ghost{background:transparent;color:var(--surface);border-color:rgba(255,255,255,.4);}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--border-strong);}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:env(safe-area-inset-top,0px);
+    z-index:20;
+    margin-inline:-20px;padding-inline:20px;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-row{
+    max-width:1080px;margin-inline:auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:14px;gap:12px;
+  }
+  .wordmark{
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.05rem;
+    display:flex;align-items:baseline;gap:.4em;white-space:nowrap;
+  }
+  .wordmark .accent{color:var(--logo-blue);}
+  .wordmark small{
+    font-family:"IBM Plex Mono",monospace;font-size:.58rem;font-weight:500;
+    color:var(--ink-faint);letter-spacing:.06em;text-transform:uppercase;
+  }
+  .header-row .btn{padding:.6em 1.2em;font-size:.85rem;}
+  .btn-outline.small{color:var(--ink);border-color:var(--border-strong);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding-block:56px 64px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  }
+  .hero h1{font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.08;margin-block:18px 16px;}
+  .hero p.lede{font-size:1.08rem;line-height:1.55;color:var(--ink-muted);max-width:46ch;margin:0 0 28px;}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .hero .cta-row .meta{font-size:.85rem;color:var(--ink-faint);}
+  .datebadge{
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--primary-tint);color:var(--primary-ink);
+    border:1px solid var(--field-border);
+    padding:.5em 1em;border-radius:999px;font-size:.85rem;font-weight:600;
+    margin-bottom:22px;
+  }
+  .datebadge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+  /* hero form-mock graphic */
+  .formcard{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);
+    box-shadow:var(--shadow);padding:22px 22px 24px;
+  }
+  .formcard .fc-head{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;
+  }
+  .fc-head .pill{
+    background:var(--accent-tint);color:var(--accent-ink);border-radius:999px;
+    padding:.25em .7em;font-weight:600;
+  }
+  .fc-row{display:flex;gap:12px;margin-bottom:12px;}
+  .fc-row .fc-n{
+    flex:none;width:24px;height:24px;border-radius:50%;
+    background:var(--primary);color:var(--surface);
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .fc-row .fc-body{flex:1;}
+  .fc-row .fc-label{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .fc-field{
+    background:var(--field-fill);border:1px solid var(--field-border);
+    border-radius:var(--radius-s);height:14px;width:100%;
+  }
+  .fc-field.short{width:62%;}
+  .fc-field.q{
+    height:auto;padding:8px 10px;font-size:.76rem;color:var(--ink-muted);
+    font-style:italic;line-height:1.4;background:transparent;border-style:dashed;
+  }
+
+  /* ---------- stat strip ---------- */
+  .statbar{
+    background:var(--primary);color:var(--primary-tint);
+    margin-inline:-20px;padding:34px 20px;
+  }
+  .statbar .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;
+  }
+  .statbar .stat b{
+    display:block;font-family:"Fraunces",serif;font-size:clamp(1.6rem,3vw,2.2rem);
+    color:#fff;font-variant-numeric:tabular-nums;
+  }
+  .statbar .stat span{font-size:.8rem;color:color-mix(in srgb, var(--primary-tint) 80%, transparent);}
+
+  /* ---------- generic section ---------- */
+  section{padding-block:64px;}
+  .section-head{max-width:60ch;margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:12px;}
+  .section-head p{color:var(--ink-muted);line-height:1.6;font-size:1rem;margin:0;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+
+  .problem-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+  .problem-list li{
+    display:flex;gap:14px;padding:16px 18px;background:var(--surface);
+    border:1px solid var(--border);border-radius:var(--radius-m);
+  }
+  .problem-list .mark{
+    flex:none;width:26px;height:26px;border-radius:50%;
+    background:var(--accent-tint);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;
+  }
+  .problem-list p{margin:0;color:var(--ink-muted);font-size:.94rem;line-height:1.5;}
+  .problem-list strong{color:var(--ink);}
+
+  .idea-card{
+    background:var(--primary);color:var(--primary-tint);
+    border-radius:var(--radius-l);padding:30px 28px;
+    display:flex;flex-direction:column;gap:14px;justify-content:center;
+  }
+  .idea-card .eyebrow{color:var(--accent);}
+  .idea-card .eyebrow::before{background:var(--accent);}
+  .idea-card h3{color:#fff;font-size:1.3rem;}
+  .idea-card p{margin:0;line-height:1.6;color:color-mix(in srgb, var(--primary-tint) 85%, transparent);font-size:.96rem;}
+
+  /* ---------- leitfragen grid ---------- */
+  .lf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .lf-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);
+    padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;
+  }
+  .lf-card .lf-n{
+    font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-faint);
+    display:flex;align-items:center;gap:8px;
+  }
+  .lf-card .lf-n::after{content:"";flex:1;height:1px;background:var(--border);}
+  .lf-card h4{margin:0;font-family:"Fraunces",serif;font-size:1.02rem;font-weight:600;}
+  .lf-card blockquote{
+    margin:0;padding:10px 12px;background:var(--field-fill);border:1px dashed var(--field-border);
+    border-radius:var(--radius-s);font-size:.82rem;font-style:italic;color:var(--ink-muted);line-height:1.45;
+  }
+  .lf-more{
+    text-align:center;margin-top:26px;font-size:.88rem;color:var(--ink-muted);
+  }
+  .lf-more strong{color:var(--ink);}
+
+  /* ---------- agenda ---------- */
+  .agenda{list-style:none;margin:0;padding:0;display:grid;gap:0;}
+  .agenda li{
+    display:grid;grid-template-columns:52px 1fr;gap:18px;
+    padding-block:20px;border-top:1px solid var(--border);
+  }
+  .agenda li:last-child{border-bottom:1px solid var(--border);}
+  .agenda .a-n{font-family:"Fraunces",serif;font-size:1.3rem;color:var(--accent-ink);}
+  .agenda h4{margin:0 0 4px;font-size:1.02rem;font-family:"Fraunces",serif;}
+  .agenda p{margin:0;color:var(--ink-muted);font-size:.9rem;line-height:1.5;}
+
+  /* ---------- audience chips ---------- */
+  .chiprow{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    background:var(--surface-2);border:1px solid var(--border);border-radius:999px;
+    padding:.55em 1.1em;font-size:.86rem;color:var(--ink);
+  }
+
+  /* ---------- speaker + facts ---------- */
+  .infogrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .infocard{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);
+    padding:26px;
+  }
+  .speaker-top{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .avatar{
+    width:56px;height:56px;border-radius:50%;flex:none;
+    background:var(--primary-tint);color:var(--primary-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.1rem;
+    border:1px dashed var(--field-border);
+  }
+  .speaker-top .name{font-weight:700;font-size:1rem;}
+  .speaker-top .role{font-size:.84rem;color:var(--ink-faint);}
+  .infocard p{color:var(--ink-muted);font-size:.9rem;line-height:1.55;margin:0;}
+  .facts{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .facts li{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;padding-block:8px;border-top:1px solid var(--border);}
+  .facts li:first-child{border-top:none;}
+  .facts .k{color:var(--ink-faint);}
+  .facts .v{font-weight:600;text-align:right;}
+
+  /* ---------- final cta ---------- */
+  .finalcta{
+    background:var(--primary);color:var(--primary-tint);
+    border-radius:var(--radius-l);
+    padding:48px 32px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:16px;
+  }
+  .finalcta h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);max-width:26ch;}
+  .finalcta p{margin:0;color:color-mix(in srgb, var(--primary-tint) 85%, transparent);max-width:48ch;}
+  .finalcta .note{font-size:.8rem;color:color-mix(in srgb, var(--primary-tint) 65%, transparent);}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--border);padding-block:28px 40px;
+    margin-top:20px;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.8rem;color:var(--ink-faint);}
+  footer .fnote{max-width:52ch;line-height:1.5;}
+  footer a{text-decoration:underline;text-underline-offset:2px;}
+
+  @media (max-width: 820px){
+    .hero{grid-template-columns:1fr;padding-block:36px 40px;}
+    .statbar .wrap{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .two-col{grid-template-columns:1fr;}
+    .lf-grid{grid-template-columns:1fr 1fr;}
+    .infogrid{grid-template-columns:1fr;}
+    .agenda li{grid-template-columns:36px 1fr;}
+  }
+  @media (max-width: 520px){
+    .lf-grid{grid-template-columns:1fr;}
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<header class="site">
+  <div class="header-row">
+    <div class="wordmark">eLearning<span class="accent">Journal</span><small>Webinar</small></div>
+    <a class="btn btn-outline small" href="#anmeldung">Jetzt anmelden</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <span class="datebadge"><span class="dot"></span>Termin wird in Kürze bekannt gegeben · 60 Min. · online</span>
+      <div class="eyebrow">Kostenfreies Webinar</div>
+      <h1>Qualitätsmanagement für den E-Learning-Einsatz</h1>
+      <p class="lede">Der eLearning AWARD fragt jedes Jahr rund 38 Leitfragen ab, bevor ein Projekt überhaupt eingereicht werden kann. Wir zeigen, wie Sie genau diesen Fragenkatalog nicht für die Bewerbung, sondern als Reflexions- und Evaluationsinstrument für Ihr eigenes Team nutzen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#anmeldung">Platz sichern →</a>
+        <span class="meta">Demo-Ansicht · Anmeldung folgt</span>
+      </div>
+    </div>
+
+    <div class="formcard" aria-hidden="true">
+      <div class="fc-head"><span>Call for Papers · Teil II</span><span class="pill">Leitfragen</span></div>
+
+      <div class="fc-row">
+        <div class="fc-n">04</div>
+        <div class="fc-body">
+          <div class="fc-label">Projektumsetzung</div>
+          <div class="fc-field q">Welche Stolpersteine mussten überwunden werden?</div>
+        </div>
+      </div>
+      <div class="fc-row">
+        <div class="fc-n">08</div>
+        <div class="fc-body">
+          <div class="fc-label">Akzeptanz &amp; Lernerfolg</div>
+          <div class="fc-field q">Wie haben Sie den Lernerfolg Ihres Projekts gemessen?</div>
+        </div>
+      </div>
+      <div class="fc-row">
+        <div class="fc-n">11</div>
+        <div class="fc-body">
+          <div class="fc-label">Projektfazit</div>
+          <div class="fc-field"></div>
+          <div class="fc-field short" style="margin-top:6px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="statbar">
+  <div class="wrap">
+    <div class="stat"><b class="num">38</b><span>Leitfragen im Original-Katalog</span></div>
+    <div class="stat"><b class="num">12</b><span>Themenblöcke</span></div>
+    <div class="stat"><b class="num">2009</b><span>seit diesem Jahr im eLearning AWARD erprobt</span></div>
+    <div class="stat"><b>IFBB</b><span>wissenschaftliche Begleitung</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <div class="section-head">
+      <div class="eyebrow">Ausgangslage</div>
+      <h2>Woran es meist scheitert</h2>
+      <p>E-Learning-Projekte werden oft nach Bauchgefühl bewertet, nicht nach Kriterien.</p>
+    </div>
+    <ul class="problem-list">
+      <li><span class="mark">1</span><p><strong>Kein gemeinsamer Maßstab:</strong> Jedes Team bewertet „gutes“ E-Learning nach eigenen, unausgesprochenen Kriterien.</p></li>
+      <li><span class="mark">2</span><p><strong>Reflexion endet mit dem Rollout:</strong> Akzeptanz, Lerntransfer und Nachhaltigkeit werden selten systematisch nachgehalten.</p></li>
+      <li><span class="mark">3</span><p><strong>Erkenntnisse bleiben im Projekt stecken:</strong> Lessons Learned wandern nicht strukturiert in das nächste Vorhaben.</p></li>
+    </ul>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="two-col">
+      <div>
+        <div class="section-head" style="margin-bottom:16px;">
+          <div class="eyebrow">Die Idee</div>
+          <h2>Ein Bewerbungsformular als Qualitäts-Checkliste</h2>
+        </div>
+        <p style="color:var(--ink-muted);line-height:1.6;">Der Call for Papers zum eLearning AWARD fragt Jahr für Jahr strukturiert ab, was ein E-Learning-Projekt eigentlich ausmacht: Ausgangslage, Zielgruppen, Umsetzung, Akzeptanz, Nachhaltigkeit. Ursprünglich gedacht, um Award-Einreichungen vergleichbar zu machen &mdash; funktionieren die Leitfragen genauso gut als Team-Workshop, um ein eigenes, laufendes oder abgeschlossenes Projekt ehrlich zu evaluieren.</p>
+      </div>
+      <div class="idea-card">
+        <div class="eyebrow">Aus dem Webinar</div>
+        <h3>„Nutzen Sie den Katalog, bevor Sie ihn brauchen.“</h3>
+        <p>Statt die Leitfragen erst bei einer Award-Bewerbung zum ersten Mal zu lesen, setzen erfolgreiche Teams sie bereits während der Konzeption und nach dem Rollout als Reflexionsraster ein.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leitfragen" style="padding-top:0;">
+    <div class="section-head">
+      <div class="eyebrow">Vorschau</div>
+      <h2>Die 12 Themenblöcke der 38 Leitfragen</h2>
+      <p>Eine Original-Leitfrage je Block &mdash; wortgetreu aus dem aktuellen Call for Papers des eLearning AWARD.</p>
+    </div>
+    <div class="lf-grid">
+      <div class="lf-card"><div class="lf-n">01 · Ausgangslage</div><h4>Strategische Verankerung</h4><blockquote>„Wird in Ihrem Unternehmen die betriebliche Bildung an den Unternehmenszielen ausgerichtet?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">02 · Auslöser &amp; Bedarf</div><h4>Ausgangssituation</h4><blockquote>„Welche spezifischen Herausforderungen wollte Ihr Projekt überwinden und welche spezifischen Bedürfnisse erfüllen?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">03 · Projektziele</div><h4>Zielausrichtung</h4><blockquote>„Tragen die Projektziele dazu bei, die übergeordneten Geschäfts- oder Bildungsziele Ihres Unternehmens zu unterstützen?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">04 · Zielgruppen</div><h4>Bedarfsermittlung</h4><blockquote>„Wie haben Sie die Bedürfnisse und Merkmale Ihrer Zielgruppe ermittelt und analysiert?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">05 · Umsetzung</div><h4>Projektdurchführung</h4><blockquote>„Welche Stolpersteine mussten überwunden werden?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">06 · Methodik &amp; Technologie</div><h4>Didaktische Ansätze</h4><blockquote>„Welche methodischen und didaktischen Ansätze sind erfolgsrelevant für das Projekt?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">07 · Rollout</div><h4>Promotion</h4><blockquote>„Welche Marketing- und Kommunikationsmaßnahmen wurden konkret ergriffen?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">08 · Akzeptanz</div><h4>Lernerfolg</h4><blockquote>„Wie haben Sie den Lernerfolg Ihres Projekts gemessen?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">09 · Innovation</div><h4>Abgrenzung</h4><blockquote>„In welchen Bereichen betrachten Sie Ihr Projekt als innovativ im Vergleich zu bestehenden Lösungen?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">10 · Nachhaltigkeit</div><h4>Weiterentwicklung</h4><blockquote>„Inwiefern trägt Ihr Projekt zur kontinuierlichen Verbesserung im L&amp;D-Bereich Ihres Unternehmens bei?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">11 · Fazit &amp; KPIs</div><h4>Erfolgsmessung</h4><blockquote>„Welche KPIs und Evaluationsergebnisse sprechen für Ihren Projekterfolg?“</blockquote></div>
+      <div class="lf-card"><div class="lf-n">12 · Lessons Learned</div><h4>Empfehlungen</h4><blockquote>„Welche Empfehlungen würden Sie anderen L&amp;D-Profis geben, die ähnliche Herausforderungen bewältigen möchten?“</blockquote></div>
+    </div>
+    <p class="lf-more">Im Webinar erhalten Sie <strong>alle 38 Leitfragen</strong> als druckfähiges Reflexionsraster für Ihr Team.</p>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="section-head">
+      <div class="eyebrow">Ablauf</div>
+      <h2>Agenda</h2>
+    </div>
+    <ol class="agenda">
+      <li><span class="a-n num">01</span><div><h4>Herkunft &amp; Logik der Leitfragen</h4><p>Wie der Call-for-Papers-Katalog des eLearning AWARD entstanden ist und warum seine Struktur einem Qualitätskreislauf folgt.</p></div></li>
+      <li><span class="a-n num">02</span><div><h4>Die 12 Themenblöcke im Detail</h4><p>Von Ausgangslage und Zielgruppen über Umsetzung und Akzeptanz bis zu Nachhaltigkeit und Lessons Learned.</p></div></li>
+      <li><span class="a-n num">03</span><div><h4>Praxis: Reflexions-Workshop mit dem Team</h4><p>Wie Sie die Leitfragen als moderierten Workshop für ein laufendes oder abgeschlossenes Projekt einsetzen.</p></div></li>
+      <li><span class="a-n num">04</span><div><h4>Von der Reflexion zur Maßnahme</h4><p>Ergebnisse priorisieren und in konkrete Verbesserungen für das nächste E-Learning-Projekt überführen.</p></div></li>
+      <li><span class="a-n num">05</span><div><h4>Fragen &amp; Austausch</h4><p>Raum für Ihre Praxisfälle und offene Fragen.</p></div></li>
+    </ol>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="section-head">
+      <div class="eyebrow">Für wen</div>
+      <h2>Zielgruppe</h2>
+    </div>
+    <div class="chiprow">
+      <span class="chip">L&amp;D- &amp; Personalentwicklungs-Verantwortliche</span>
+      <span class="chip">Qualitätsmanagement</span>
+      <span class="chip">Projektverantwortliche E-Learning</span>
+      <span class="chip">Instruktionsdesign &amp; Didaktik</span>
+      <span class="chip">Trainer:innen &amp; Bildungsreferent:innen</span>
+    </div>
+  </section>
+
+  <section id="anmeldung" style="padding-top:0;">
+    <div class="infogrid">
+      <div class="infocard">
+        <div class="speaker-top">
+          <div class="avatar">RF</div>
+          <div><div class="name">Referent:in &mdash; wird ergänzt</div><div class="role">eLearning Journal / IFBB</div></div>
+        </div>
+        <p>Platzhalter für Kurzprofil der Moderation: Rolle, Erfahrung mit dem eLearning AWARD und Bezug zur Qualitätsbewertung von E-Learning-Projekten.</p>
+      </div>
+      <div class="infocard">
+        <ul class="facts">
+          <li><span class="k">Termin</span><span class="v">wird bekannt gegeben</span></li>
+          <li><span class="k">Dauer</span><span class="v">ca. 60 Minuten</span></li>
+          <li><span class="k">Format</span><span class="v">Online-Webinar</span></li>
+          <li><span class="k">Teilnahme</span><span class="v">kostenfrei</span></li>
+          <li><span class="k">Inklusive</span><span class="v">Leitfragen-Katalog (PDF)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="finalcta">
+      <div class="eyebrow">Anmeldung</div>
+      <h2>Machen Sie die 38 Leitfragen zu Ihrem Qualitäts-Werkzeug</h2>
+      <p>Sichern Sie sich einen Platz &mdash; das vollständige Reflexionsraster erhalten alle Teilnehmenden im Anschluss als Download.</p>
+      <a class="btn btn-ghost" href="#" style="background:var(--accent);color:#241505;border-color:transparent;">Jetzt anmelden →</a>
+      <span class="note">Demo-Landingpage &mdash; Formular/Link folgen mit den finalen Eckdaten.</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fnote">Gestaltungsentwurf einer Webinar-Landingpage. Inhaltliche Grundlage: die Leitfragen des Call for Papers zum eLearning AWARD (eLearning Journal / Siepmann Media, wissenschaftliche Begleitung IFBB &mdash; Institut für Betriebliche Bildung).</div>
+    <div>Kontakt &amp; Impressum &mdash; Platzhalter</div>
+  </div>
+</footer>
